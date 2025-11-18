@@ -2,12 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { 
-  SITE_TITLE, 
-  SITE_DESCRIPTION, 
-  CONTACT_EMAIL, 
-  SECURITY_EMAIL 
-} from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, CONTACT_EMAIL, SECURITY_EMAIL } from '../consts';
 ---
 
 <!doctype html>
@@ -18,205 +13,84 @@ import {
 	<body>
 		<Header />
 		<main>
-			<!-- Hero Section -->
+			<!-- Simple Hero Section -->
 			<section class="hero">
 				<div class="container">
 					<h1>🛡️ Hermetrix Technologies</h1>
 					<p class="tagline">
-						Secure Communications & Cybersecurity Solutions for the Asia-Pacific Region
+						Secure Communications & Cybersecurity
 					</p>
 					<p>
-						Hermetrix Technologies provides enterprise-grade encrypted communications 
-						and cybersecurity services to protect your organization's most sensitive assets 
-						and information.
+						Professional cybersecurity solutions and consulting services for the Asia-Pacific region.
 					</p>
-					<div class="cta-buttons">
-						<a href="/contact" class="btn primary">Contact Us</a>
-						<a href="/services" class="btn secondary">Our Services</a>
+					<div class="contact-info">
+						<p>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+						<p>Security: <a href={`mailto:${SECURITY_EMAIL}`}>{SECURITY_EMAIL}</a></p>
 					</div>
 				</div>
 			</section>
-
-			<!-- Services Overview -->
-			<section class="services">
-				<div class="container">
-					<h2>Our Expertise</h2>
-					<div class="services-grid">
-						<div class="service-card">
-							<h3>Encrypted Communications</h3>
-							<p>Implementation and support of enterprise-grade encrypted communication devices and systems.</p>
-						</div>
-						<div class="service-card">
-							<h3>Cybersecurity Consulting</h3>
-							<p>Comprehensive security assessments and strategy development aligned with NZISM standards.</p>
-						</div>
-						<div class="service-card">
-							<h3>Compliance & Governance</h3>
-							<p>Guidance on regulatory compliance including PSR and protective security requirements.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Trust Indicators -->
-			<section class="trust">
-				<div class="container">
-					<h2>Why Choose Hermetrix</h2>
-					<ul>
-						<li><strong>Security-First Approach:</strong> Every solution is built with operational security as the foundation</li>
-						<li><strong>Regional Expertise:</strong> Deep understanding of APAC security requirements and regulations</li>
-						<li><strong>Enterprise Focus:</strong> Solutions designed for business and government environments</li>
-						<li><strong>Discreet & Professional:</strong> We prioritize your operational security and privacy</li>
-					</ul>
-				</div>
-			</section>
-
-<!-- Contact CTA -->
-<section class="contact-cta">
-  <div class="container">
-    <h2>Secure Your Communications</h2>
-    <p>Contact us to discuss your security requirements</p>
-    <div class="contact-methods">
-      <p>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
-      <p>Security: <a href={`mailto:${SECURITY_EMAIL}`}>{SECURITY_EMAIL}</a></p>
-    </div>
-  </div>
-</section>
 		</main>
 		<Footer />
 
 		<style>
-			/* Hero Section */
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				font-family: system-ui, sans-serif;
+				line-height: 1.6;
+			}
+
+			main {
+				flex: 1;
+			}
+
 			.hero {
-				padding: 4rem 0;
+				padding: 4rem 1rem;
 				text-align: center;
 				background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-			}
-
-			.hero h1 {
-				font-size: 3rem;
-				margin-bottom: 1rem;
-			}
-
-			.tagline {
-				font-size: 1.5rem;
-				font-weight: 300;
-				margin-bottom: 2rem;
-				color: #4a5568;
-			}
-
-			.cta-buttons {
-				margin-top: 2rem;
-			}
-
-			.btn {
-				display: inline-block;
-				padding: 0.75rem 2rem;
-				margin: 0 0.5rem;
-				text-decoration: none;
-				border-radius: 0.375rem;
-				font-weight: 600;
-				transition: all 0.2s;
-			}
-
-			.btn.primary {
-				background-color: #1a365d;
-				color: white;
-			}
-
-			.btn.primary:hover {
-				background-color: #2d3748;
-			}
-
-			.btn.secondary {
-				background-color: transparent;
-				color: #1a365d;
-				border: 2px solid #1a365d;
-			}
-
-			.btn.secondary:hover {
-				background-color: #1a365d;
-				color: white;
-			}
-
-			/* Services Section */
-			.services {
-				padding: 4rem 0;
-				background-color: white;
-			}
-
-			.services h2 {
-				text-align: center;
-				margin-bottom: 3rem;
-				font-size: 2.5rem;
-			}
-
-			.services-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: 2rem;
-				max-width: 1200px;
-				margin: 0 auto;
-			}
-
-			.service-card {
-				padding: 2rem;
-				background: #f8fafc;
-				border-radius: 0.5rem;
-				border-left: 4px solid #1a365d;
-			}
-
-			.service-card h3 {
-				color: #1a365d;
-				margin-bottom: 1rem;
-			}
-
-			/* Trust Section */
-			.trust {
-				padding: 4rem 0;
-				background-color: #f8fafc;
-			}
-
-			.trust h2 {
-				text-align: center;
-				margin-bottom: 3rem;
-			}
-
-			.trust ul {
-				max-width: 800px;
-				margin: 0 auto;
-				list-style: none;
-			}
-
-			.trust li {
-				padding: 1rem 0;
-				border-bottom: 1px solid #e2e8f0;
-			}
-
-			/* Contact CTA */
-			.contact-cta {
-				padding: 4rem 0;
-				text-align: center;
-				background-color: #1a365d;
-				color: white;
-			}
-
-			.contact-cta h2 {
-				margin-bottom: 1rem;
-			}
-
-			.contact-cta a {
-				color: #90cdf4;
-			}
-
-			.contact-cta a:hover {
-				color: white;
+				min-height: 60vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 
 			.container {
-				max-width: 1200px;
+				max-width: 800px;
 				margin: 0 auto;
-				padding: 0 1rem;
+			}
+
+			.hero h1 {
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+				color: #1a365d;
+			}
+
+			.tagline {
+				font-size: 1.25rem;
+				color: #4a5568;
+				margin-bottom: 2rem;
+				font-weight: 300;
+			}
+
+			.contact-info {
+				margin-top: 2rem;
+				padding: 1.5rem;
+				background: white;
+				border-radius: 0.5rem;
+				display: inline-block;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+			}
+
+			.contact-info a {
+				color: #1a365d;
+				text-decoration: none;
+				font-weight: 500;
+			}
+
+			.contact-info a:hover {
+				text-decoration: underline;
 			}
 		</style>
 	</body>
